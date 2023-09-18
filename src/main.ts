@@ -36,13 +36,7 @@ app.get("/api/error", async (req, res) => {
 app.post("/api/games", async (req, res) => {
     const now = new Date();
 
-    const connect = await mysql.createConnection({
-        host: "localhost",
-        database: "reversi",
-        port: 3321,
-        user: "reversi",
-        password: "password",
-    });
+    const connect = await connectMySQL();
 
     try {
         await connect.beginTransaction();
@@ -90,6 +84,49 @@ app.post("/api/games", async (req, res) => {
     res.status(201).end();
 });
 
+app.get("/api/games/latest/turns/:turnCount", async (req, res) => {
+    const turnCount = parseInt(req.params.turnCount);
+
+    const connect = await connectMySQL();
+    try {
+        const gameSelectResult = await connect.execute<mysql.RowDataPacket[]>(
+            "select id, started_at from games order by id desc limit 1"
+        );
+        const game = gameSelectResult[0][0];
+
+        const turnSelectResult = await connect.execute<mysql.RowDataPacket[]>(
+            "select id, game_id, turn_count, next_disc, end_at from turns where game_id = ? and turn_count = ? ",
+            [game["id"], turnCount]
+        );
+        const turn = turnSelectResult[0][0];
+
+        // prettier-ignore
+        const squaresSelectResult = await connect.execute<mysql.RowDataPacket[]>(
+            "select id, turn_id, x, y, disc from squares where turn_id = ? ",
+            [ turn["id"]]
+        );
+        const squares = squaresSelectResult[0];
+        const board = Array.from(Array(8)).map(() => Array.from(Array(8)));
+        squares.forEach((s) => {
+            board[s.y][s.x] = s.disc;
+        });
+
+        const responseBody = {
+            turnCount,
+            board,
+            nextDisc: turn["next_disc"],
+            // TODO 決着がついている場合、game_results テーブルから取得する
+            winnerDisc: null,
+        };
+
+        res.json(responseBody);
+    } finally {
+        await connect.end();
+    }
+});
+
+app.use(errorHandler);
+
 app.listen(PORT, () => {
     console.log(`Reversi app started: http://localhost:${PORT}`);
 });
@@ -103,5 +140,15 @@ function errorHandler(
     console.error("Unexpected error occurred", err);
     res.status(500).send({
         message: "Unexpected error occurred",
+    });
+}
+
+async function connectMySQL() {
+    return await mysql.createConnection({
+        host: "localhost",
+        database: "reversi",
+        port: 3320,
+        user: "reversi",
+        password: "password",
     });
 }
