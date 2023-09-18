@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "hediet.vscode-drawio",
+        "arjun.swagger-viewer",
+        "42crunch.vscode-openapi",
+        "ms-vscode-remote.remote-containers"
+    ]
+}

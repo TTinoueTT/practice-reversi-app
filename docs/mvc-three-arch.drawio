@@ -1,0 +1,83 @@
+<mxfile host="65bd71144e">
+    <diagram id="b-blfYIkdgPZX9wCAae5" name="Page-1">
+        <mxGraphModel dx="468" dy="374" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="115" y="200" width="610" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="html=1;fillColor=#F3EFFA;fontColor=#000000;strokeColor=#000000;" parent="3" vertex="1">
+                    <mxGeometry x="11" y="20" width="140" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="プレゼンテーション層&lt;br&gt;(インターフェース層)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" parent="3" vertex="1">
+                    <mxGeometry x="6" y="30" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="" style="html=1;fillColor=#F3EFFA;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="3">
+                    <mxGeometry x="210" y="20" width="165" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="ビジネスロジック層&lt;br&gt;(アプリケーション層)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="3">
+                    <mxGeometry x="217.5" y="30" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="プレゼンテーション層&lt;br&gt;(インターフェース層)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="3">
+                    <mxGeometry x="453" y="30" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="" style="html=1;fillColor=#F3EFFA;fontColor=#000000;strokeColor=#000000;" vertex="1" parent="3">
+                    <mxGeometry x="459" y="20" width="140" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="データアクセス層" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="3">
+                    <mxGeometry x="454" y="30" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="Router&lt;br&gt;(Controller)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="3">
+                    <mxGeometry x="26.5" y="80" width="109" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="&lt;b&gt;&lt;font color=&quot;#3333ff&quot; style=&quot;font-size: 14px;&quot;&gt;Model&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#ffffff;strokeColor=#3333FF;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="270" width="350" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#3333FF;" edge="1" parent="1" source="98">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="369.9999999999999" y="378.21212121212125" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="98" value="Response&lt;br&gt;(View)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+                    <mxGeometry x="141.5" y="358" width="109" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#3333FF;" edge="1" parent="1" source="97" target="98">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#3333FF;fontSize=14;" edge="1" parent="1" source="111" target="112">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#3333FF;fontSize=14;" edge="1" parent="1" source="111" target="116">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#3333FF;fontSize=14;" edge="1" parent="1" source="111" target="117">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9933FF;" vertex="1" parent="1">
+                    <mxGeometry x="368" y="280" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="Output" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9933FF;" vertex="1" parent="1">
+                    <mxGeometry x="369" y="361" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#3333FF;" edge="1" parent="1" source="97" target="111">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#3333FF;" edge="1" parent="1" source="97" target="112">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#3333FF;fontSize=14;" edge="1" parent="1" source="116" target="117">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="Gateway&lt;br&gt;(Repository)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9933FF;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="280" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="Record&lt;br&gt;(Entity)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#9933FF;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="360" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Untitled Layer" parent="0"/>
+                <mxCell id="26" value="Untitled Layer" parent="0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

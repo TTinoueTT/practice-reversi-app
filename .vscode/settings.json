@@ -1,0 +1,22 @@
+{
+    // エディター全般
+    // "workbench.settings.useSplitJSON": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 700,
+    "editor.minimap.maxColumn": 30,
+    "diffEditor.wordWrap": "off",
+    "hedit.vscode-drawio.theme": "Kennedy",
+    "[typescript][html][vue][json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        }
+    },
+    "prettier.printWidth": 80
+}

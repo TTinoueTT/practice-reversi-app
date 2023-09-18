@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="QfJO7KM82MZYqyxudxrP" name="Page-1">
+        <mxGraphModel dx="851" dy="525" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1b1818;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="80" width="520" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;font color=&quot;#000000&quot;&gt;ユーザA&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeColor=#000000;fillColor=#F3EFFA;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="170" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;span style=&quot;border-bottom: 1px dotted&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;開発する対象の&lt;br&gt;システム&lt;/font&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;strokeColor=#000000;strokeWidth=2;fillColor=#F3EFFA;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="160" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="外部システム&lt;br&gt;Y" style="whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fillColor=#F3EFFA;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="250" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="外部システム&lt;br&gt;X" style="whiteSpace=wrap;html=1;align=center;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fillColor=#F3EFFA;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="110" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;font color=&quot;#000000&quot;&gt;ユーザB&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeColor=#000000;fillColor=#F3EFFA;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="290" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=none;html=1;rounded=0;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="170" y="199.5" as="sourcePoint"/>
+                        <mxPoint x="260" y="199.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=none;html=1;rounded=0;fontColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="1" source="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="410" y="189.5" as="sourcePoint"/>
+                        <mxPoint x="500" y="150" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=none;html=1;rounded=0;fontColor=#000000;strokeColor=#000000;strokeWidth=2;exitX=0.92;exitY=0.768;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="3" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="440" y="230" as="sourcePoint"/>
+                        <mxPoint x="480" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=none;html=1;rounded=0;fontColor=#000000;strokeColor=#000000;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="335" y="330" as="sourcePoint"/>
+                        <mxPoint x="320" y="269.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
