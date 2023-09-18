@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        // ... 他の設定 ...
+        "esModuleInterop": true,
+        "baseUrl": "./", // プロジェクトのベースディレクトリを指定
+        "paths": {
+            "@/*": ["src/*"] // '@' を 'src/' ディレクトリにマッピング
+        }
+    }
+}
