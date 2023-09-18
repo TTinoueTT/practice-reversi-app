@@ -2,18 +2,6 @@ const EMPTY = 0;
 const DARK = 1;
 const LIGHT = 2;
 
-
-const INITIAL_BOARD = [
-    [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, DARK, LIGHT, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, LIGHT, DARK, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY],
-    [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY]
-]
-
 const boardEl = document.getElementById("board")
 
 async function showBoard() {
@@ -21,6 +9,7 @@ async function showBoard() {
     const response = await fetch(`/api/games/latest/turns/${turnCount}`)
     const responseBody = await response.json()
     const board = responseBody.board
+    const nextDisc = responseBody.nextDisc
 
 
     while (boardEl.firstChild) {
@@ -37,10 +26,15 @@ async function showBoard() {
                 // <div class="square dark" >
                 const color = square === DARK ? "dark" : "light";
                 squareEl.classList.add(color);
+            } else {
+                squareEl.addEventListener("click", async () => {
+                    // console.log("clicked");
+                    const nextTurnCount = turnCount + 1
+                    await registerTurn(nextTurnCount, nextDisc, x, y)
+                })
             }
 
-            squareEl.innerHTML = `<i>${y + 1} , ${x + 1}</i>`
-
+            squareEl.innerHTML = `<i>${y} , ${x}</i>`
             boardEl.appendChild(squareEl)
             // console.log(`${y + 1} , ${x + 1}`);
         })
@@ -50,6 +44,25 @@ async function showBoard() {
 async function registerGame() {
     await fetch("/api/games", {
         method: "POST"
+    })
+}
+
+async function registerTurn(turnCount, disc, x, y) {
+    const requestBody = {
+        turnCount,
+        move: {
+            disc,
+            x,
+            y
+        }
+    }
+
+    await fetch("/api/games/latest/turns", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestBody)
     })
 }
 
