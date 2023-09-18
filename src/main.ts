@@ -160,13 +160,13 @@ app.post("/api/games/latest/turns", async (req, res) => {
             board[s.y][s.x] = s.disc;
         });
 
-        // 盤面に置けるかチェック
+        // TODO: 盤面に置けるかチェック
 
         // 石を置く
         board[y][x] = disc;
         console.log(board);
 
-        // ひっくり返す
+        // TODO: ひっくり返す
 
         // ターンを保存する
         const nextDisc = disc === DARK ? LIGHT : DARK;
