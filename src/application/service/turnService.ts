@@ -3,6 +3,7 @@ import express from "express";
 export const turnRouter = express.Router();
 import { connectMySQL } from "@/dataaccess/connection";
 import { EMPTY, DARK, LIGHT, INITIAL_BOARD } from "@/application/constants";
+import { FindLatestGameTurnByTurnCountDto } from "@/application/dto/turnDto";
 
 import { GameGateway } from "@/dataaccess/gateway/gameGateway";
 import { TurnGateway } from "@/dataaccess/gateway/turnGateway";
@@ -15,7 +16,9 @@ const moveGateway = new MoveGateway();
 const squareGateway = new SquareGateway();
 
 export class TurnService {
-    async findLatestGameTurnByTurnCount(turnCount: number) {
+    async findLatestGameTurnByTurnCount(
+        turnCount: number
+    ): Promise<FindLatestGameTurnByTurnCountDto> {
         const connect = await connectMySQL();
         try {
             const gameRecord = await gameGateway.findLatest(connect);
@@ -32,23 +35,20 @@ export class TurnService {
                 throw new Error("Specified turn not found");
             }
 
-            const squareRecords = await squareGateway.findForTurnId(
-                connect,
-                turnRecord.id
-            );
+            const squareRecords = await squareGateway.findForTurnId(connect, turnRecord.id);
 
             const board = Array.from(Array(8)).map(() => Array.from(Array(8)));
             squareRecords.forEach((s) => {
                 board[s.y][s.x] = s.disc;
             });
 
-            return {
+            return new FindLatestGameTurnByTurnCountDto(
                 turnCount,
                 board,
-                nextDisc: turnRecord.nextDisc,
+                turnRecord.nextDisc,
                 // TODO 決着がついている場合、game_results テーブルから取得する
-                winnerDisc: null,
-            };
+                undefined
+            );
         } finally {
             await connect.end();
         }
@@ -66,20 +66,16 @@ export class TurnService {
 
             const previousTurnCount = turnCount - 1;
 
-            const previousTurnRecord =
-                await turnGateway.findForGameIdAndTurnCount(
-                    connect,
-                    gameRecord.id,
-                    previousTurnCount
-                );
+            const previousTurnRecord = await turnGateway.findForGameIdAndTurnCount(
+                connect,
+                gameRecord.id,
+                previousTurnCount
+            );
             if (!previousTurnRecord) {
                 throw new Error("Specified turn not found");
             }
 
-            const squareRecords = await squareGateway.findForTurnId(
-                connect,
-                previousTurnRecord.id
-            );
+            const squareRecords = await squareGateway.findForTurnId(connect, previousTurnRecord.id);
 
             const board = Array.from(Array(8)).map(() => Array.from(Array(8)));
             squareRecords.forEach((s) => {

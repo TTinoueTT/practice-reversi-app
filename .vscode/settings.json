@@ -18,5 +18,5 @@
             "source.fixAll.eslint": true
         }
     },
-    "prettier.printWidth": 80
+    "prettier.printWidth": 100
 }
