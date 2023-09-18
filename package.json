@@ -1,0 +1,11 @@
+{
+  "name": "practice-reversi-app",
+  "version": "1.0.0",
+  "description": "リバーシで学ぶアプリケーション設計入門~仕様の整理からTypeScriptでの実装~ をもとに作成したソース",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
