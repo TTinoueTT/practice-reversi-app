@@ -17,6 +17,13 @@ app.get("/api/error", async (req, res) => {
     throw new Error("Error endpoint");
 });
 
+app.post("/api/games", async (req, res) => {
+    const startedAt = new Date();
+    console.log({ startedAt });
+
+    res.status(201).end();
+});
+
 app.listen(PORT, () => {
     console.log(`Reversi app started: http://localhost:${PORT}`);
 });
