@@ -5,6 +5,7 @@
 
 body {
     text-align: center;
+    background-color: #554129;
 }
 
 
@@ -29,11 +30,13 @@ header {
     gap: 2px;
     background-color: black;
     width: fit-content;
-    border: 2px solid;
+    border: 15px solid;
+    border-radius: 10px;
     margin: 5% auto;
 }
 
-.board > div {
+.board > .square {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,14 +45,33 @@ header {
     background-color: #54b954;
 }
 
-.board > div::before {
+.board > .square i {
+    position: absolute;
+    font-size: 0.7rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.board > .square.dark i {
+    color: #fff;
+}
+
+.board > .square::before {
     content: '';
     display: block;
     width: 95%;
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: none;
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
     /* background-color: black; */
+}
 
+.board > .square.dark::before {
+    background-color: #000000;
+}
+
+.board > .square.light::before {
+    background-color: #ffffff;
 }
