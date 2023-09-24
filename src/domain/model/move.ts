@@ -1,5 +1,5 @@
-import { Disc } from "@/dataaccess/domain/disc";
-import { Point } from "@/dataaccess/domain/point";
+import { Disc } from "@/domain/model/disc";
+import { Point } from "@/domain/model/point";
 
 export class Move {
     constructor(private _disc: Disc, private _point: Point) {}

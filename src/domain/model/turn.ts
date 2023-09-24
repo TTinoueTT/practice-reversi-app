@@ -1,7 +1,7 @@
-import { Board } from "@/dataaccess/domain/board";
-import { Disc } from "@/dataaccess/domain/disc";
-import { Move } from "@/dataaccess/domain/move";
-import { Point } from "@/dataaccess/domain/point";
+import { Board } from "@/domain/model/board";
+import { Disc } from "@/domain/model/disc";
+import { Move } from "@/domain/model/move";
+import { Point } from "@/domain/model/point";
 
 export class Turn {
     constructor(

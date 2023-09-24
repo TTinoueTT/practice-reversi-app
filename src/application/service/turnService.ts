@@ -9,10 +9,10 @@ import { GameGateway } from "@/dataaccess/gateway/gameGateway";
 import { TurnGateway } from "@/dataaccess/gateway/turnGateway";
 import { MoveGateway } from "@/dataaccess/gateway/moveGateway";
 import { SquareGateway } from "@/dataaccess/gateway/squareGateway";
-import { Board } from "@/dataaccess/domain/board";
-import { Turn } from "@/dataaccess/domain/turn";
-import { toDisc } from "@/dataaccess/domain/disc";
-import { Point } from "@/dataaccess/domain/point";
+import { Board } from "@/domain/model/board";
+import { Turn } from "@/domain/model/turn";
+import { toDisc } from "@/domain/model/disc";
+import { Point } from "@/domain/model/point";
 
 const gameGateway = new GameGateway();
 const turnGateway = new TurnGateway();
