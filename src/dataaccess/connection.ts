@@ -3,7 +3,7 @@ export async function connectMySQL() {
     return await mysql.createConnection({
         host: "localhost",
         database: "reversi",
-        port: 3320,
+        port: 3321,
         user: "reversi",
         password: "password",
     });

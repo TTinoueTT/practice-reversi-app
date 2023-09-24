@@ -31,6 +31,7 @@ export class TurnService {
                 gameRecord.id,
                 turnCount
             );
+
             if (!turnRecord) {
                 throw new Error("Specified turn not found");
             }
