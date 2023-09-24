@@ -2,6 +2,30 @@ import mysql from "mysql2/promise";
 import { MoveRecord } from "@/dataaccess/record/moveRecord";
 
 export class MoveGateway {
+    async findForTurnId(
+        connect: mysql.Connection,
+        turnId: number
+    ): Promise<MoveRecord | undefined> {
+        const moveSelectResult = await connect.execute<mysql.RowDataPacket[]>(
+            "select id, turn_id, disc, x, y from moves where turn_id = ?",
+            [turnId]
+        );
+
+        const record = moveSelectResult[0][0];
+
+        if (!record) {
+            return undefined;
+        }
+
+        return new MoveRecord(
+            record["id"],
+            record["turn_id"],
+            record["disc"],
+            record["x"],
+            record["y"]
+        );
+    }
+
     async insert(
         connect: mysql.Connection,
         turnId: number,

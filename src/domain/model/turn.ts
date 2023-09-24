@@ -25,6 +25,10 @@ export class Turn {
         return this._nextDisc;
     }
 
+    public get move(): Move | undefined {
+        return this._move;
+    }
+
     public get board(): Board {
         return this._board;
     }
