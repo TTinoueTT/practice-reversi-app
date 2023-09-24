@@ -14,4 +14,8 @@ export class TurnRecord {
     public get nextDisc(): number {
         return this._nextDisc;
     }
+
+    public get endAt(): Date {
+        return this._endAt;
+    }
 }
